@@ -179,14 +179,14 @@ const VehicleSelectionForm = () => {
       </form>
 
       <h2>Select a Vehicle</h2>
-      <div className="form-inline">
-        {commonVehicleList.map((commonVehicle, index) => (
+      {commonVehicleList.map((commonVehicle, index) => (
+        <div className="form-inline">
           <button key={index} onClick={populateVehicleForm(commonVehicle)}>
-            {commonVehicle.vehicleMake} {commonVehicle.vehicleModel}{" "}
-            {commonVehicle.vehicleBadge}
+            {changeWordToTitleCase(commonVehicle.vehicleMake)}{" "}
+            {commonVehicle.vehicleModel} {commonVehicle.vehicleBadge}
           </button>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 };
